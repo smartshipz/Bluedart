@@ -1,0 +1,138 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipment Booking Form</title>
+
+<link rel="stylesheet" href="css/CreateShipment.css">
+</head>
+<body>
+
+  <form>
+    <!-- Shipper Section -->
+    <div class="form-section">
+      <h2>Shipper Address</h2>
+      <div class="grid">
+        <div><label><b>Area</b></label><input type="text" name="area" id="area" placeholder="Area"></div>
+        <div><label><b>Shipper Code</b></label><input type="text" name="code" id="code" placeholder="Customer Code"></div>
+        <div><label><center>CheckTopay</center></label><input type="checkbox" name="cbox" id="cbox" onclick="displayConfig()" ></div>
+<div><label><input type="text" id="search" placeholder="Address Code" onblur="AddressData()"></div>
+
+        <div><input type="text" name="sname" id="sname" placeholder="Shipper Name"></div>
+        <div><input type="text" name="sattn" id="sattn" placeholder="Sender"></div>
+        <div><input type="text" name="sadd1" id="sadd1" placeholder="Address 1"></div>
+        <div><input type="text" name="sadd2" id="sadd2" placeholder="Address 2"></div>
+        <div><input type="text" name="sadd3" id="sadd3" placeholder="Address 3"></div>
+        <div><input type="number" name="spin" id="spin" placeholder="Pincode"></div>
+        <div><input type="tel" name="stel" id="stel" placeholder="Mobile Number"></div>
+      </div>
+    </div>
+
+    <!-- Consignee Section -->
+    <div class="form-section">
+      <h2>Consignee Address</h2>
+      <div class="grid">
+        <div><label><input type="text" id="searchCode" placeholder="Enter Consignee Code" onblur="fetchData()"></div>
+        <div><input type="text" name="cname" id="cname" placeholder="Company Name"></div>
+        <div><input type="text" name="cattn" id="cattn" placeholder="Attention"></div>
+        <div><input type="text" name="add1" id="cadd1" placeholder="Address 1"></div>
+        <div><input type="text" name="add2" id="cadd2" placeholder="Address 2"></div>
+        <div><input type="text" name="add3" id="cadd3" placeholder="Address 3"></div>
+        <div><input type="number" name="pin" id="cpin" placeholder="Pincode"></div>
+        <div><input type="tel" name="tel" id="ctel" placeholder="Mobile Number"></div>
+      </div>
+    </div>
+
+    <!-- Service Section -->
+    <div class="form-section">
+      <h2>Service Details</h2>
+      <div class="grid">
+        <div><input type="number" id="pcs" onchange="pcs1()" placeholder="Pieces"></div>
+        <div><input type="number" name="wgt" id="wgt" placeholder="Weight"></div>
+        <div><input type="number" name="dvalue" id="dvalue" placeholder="Declared Value"></div>
+        <div><input type="number" name="colamt" id="colamt" placeholder="Collectable Amount"></div>
+        <div><input type="date" name="pd" id="pd" value=date() placeholder="Pickup Date"></div>
+        <div><input type="text" name="ptime" id="ptime" placeholder="Pickup Time"></div>
+        <div><input type="text" name="refno" , id="refno" placeholder="Reference Number"></div>
+	<div><input type="text" name="awbno" id="awbno" placeholder="Waybill Number"></div>
+      </div><br>
+
+
+      <div class="form-row">
+<div class="input-group">
+      <label>Dispatch Mode :</label>
+      <select name="prod" id="sel">
+	<option value='SelectMode'>SelectMode</option>
+        <option value='AirEtailPrepaid'>AirEtailPrepaid</option>
+        <option value='AirEtailCod'>AirEtailCod</option>
+        <option value='DomesticPriority'>DomesticPriority</option>
+        <option value='BharathDartPrepaid'>BharathDartPrepaid</option>
+        <option value='BharathDartCod'>BharathDartCod</option>
+        <option value='GroundEtailPrepaid'>GroundEtailPrepaid</option>
+        <option value='GroundEtailCod'>GroundEtailCod</option>
+        <option value='Apex'>Apex</option>
+        <option value='Surface'>Surface</option>
+      </select>
+</div>
+<div class="input-group">
+      <label>Value Added Service : </label>
+      <select name="vas" id="vas">
+	
+      </select>
+</div>
+
+<div class="input-group">
+
+<label>Label Size :</label>
+      <select name="pdf" id="pdf">
+        <option value='a4s'>A4 - Single Copy</option>
+        <option value='a43'>A4 - Three Copy</option>
+        <option value='lab89'>89 x 60 Label</option>
+        <option value='lab55'>55 x 30 Label</option>
+	<option value='nopdf'>PDF Not Required</option>
+      </select>
+</div>
+</div><br>
+
+      <div class="radio-group">
+
+	<div><label><b>Product Type :</b></label></div>
+	<div>Dox<input type="radio" name="ptype" value="dox"></div>
+	<div>Non-Dox <input type="radio" name="ptype" value="non-dox" checked></div>
+
+        <div><label><b>Register Pickup :</b></label></div>
+	<div>Yes<input type="radio" name="pickup" value="yes" checked></div>
+	<div>No<input type="radio" name="pickup" value="no"></div>
+
+
+	<div><label><b>IsReversePickup :</b></label></div>
+	<div>Yes<input type="radio" name="revpk" value="yes"></div>
+	<div>No<input type="radio" name="revpk" value="no" checked></div><br>
+        </div>
+
+      <br><label><b>Commodity :<b></label>
+      <input type="text" name="ccmdty" id="ccmdty">
+      </div>
+      <label><b>Diminsions :</b></label>
+      <div id="res"> </div>
+
+    </div>
+
+    <button type="button" onclick="gen()"><b>CLICK TO GENERATE</b></button>
+  </form>
+
+
+<!-- API Response Section -->
+  <div id="apiResponse">
+    
+    <pre id="responseText"></pre>
+    <iframe id="pdfViewer" style="display:none; width:100%; height:500px; border:1px solid #ddd; margin-top:10px;"></iframe>
+ <iframe id="pdfViewer"></iframe>
+
+  </div>
+
+
+  <script src="js/CreateScript.js"></script> 
+</body>
+</html>

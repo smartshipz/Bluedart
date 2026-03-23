@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Serviceability Check | Blue Dart</title>
+
+ <link rel="stylesheet" href="css/ProductCss.css">
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h2>Serviceability Checker</h2>
+      <p class="sub-text">Verify Pincode logistics and Value Added Services (VAS) availability.</p>
+    </div>
+
+    <div class="form-grid">
+      <!-- Pincode -->
+      <div class="input-group full-width">
+        <label for="pin">Destination Pincode</label>
+        <input type="text" id="pin" placeholder="e.g. 560001">
+      </div>
+
+      <!-- Mode -->
+      <div class="input-group">
+        <label for="sel">Dispatch Mode</label>
+        <select id="sel">
+          <option value='SelectMode'>— Select Mode —</option>
+          <option value='AirEtailPrepaid'>Air Etail Prepaid</option>
+          <option value='AirEtailCod'>Air Etail COD</option>
+          <option value='DomesticPriority'>Domestic Priority</option>
+          <option value='BharathDartPrepaid'>Bharat Dart Prepaid</option>
+          <option value='BharathDartCod'>Bharat Dart COD</option>
+          <option value='GroundEtailPrepaid'>Ground Etail Prepaid</option>
+          <option value='GroundEtailCod'>Ground Etail COD</option>
+          <option value='Apex'>Apex</option>
+          <option value='Surface'>Surface</option>
+        </select>
+      </div>
+
+      <!-- VAS -->
+      <div class="input-group">
+        <label for="vas">Value Added Service</label>
+        <select id="vas">
+          <option value="">— Optional —</option>
+        </select>
+      </div>
+    </div>
+
+    <button onclick="add()">Check Availability</button>
+
+    <div id="tableContainer"></div>
+  </div>
+
+  <script src="js/ProductScript.js">
+
+
+  </script>
+</body>
+</html>

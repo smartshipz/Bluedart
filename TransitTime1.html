@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Shipment Booking</title>
+ <link rel="stylesheet" href="css/TransitCss.css">
+</head>
+
+<body>
+
+<div class="container">
+    <h2>Transit Time Finder</h2>
+
+    <form id="bookingForm">
+
+        <!-- Row 1: Pincodes -->
+        <div class="row">
+            <div class="form-group">
+                <label>From Pincode</label>
+                <input type="text" id="fromPincode" placeholder="Pickup Pincode" pattern="[0-9]{6}" required>
+            </div>
+
+            <div class="form-group">
+                <label>To Pincode</label>
+                <input type="text" id="toPincode" placeholder="Delivery Pincode" pattern="[0-9]{6}" required>
+            </div>
+        </div>
+
+        <!-- Row 2: Date & Time -->
+        <div class="row">
+            <div class="form-group">
+                <label>Pickup Date</label>
+                <input type="date" value=date() id="pickupDate" required>
+            </div>
+
+            <div class="form-group">
+                <label>Pickup Time</label>
+                <input type="time" id="pickupTime" required>
+            </div>
+        </div>
+
+        <!-- Row 3: Dispatch -->
+        <div class="form-group full-width">
+            <label>Dispatch Mode</label>
+            <select id="dispatch" size="5">
+                <option value='AirEtailPrepaid'>AirEtailPrepaid</option>
+        <option value='AirEtailCod'>AirEtailCod</option>
+        <option value='DomesticPriority'>DomesticPriority</option>
+        <option value='BharathDartPrepaid'>BharathDartPrepaid</option>
+        <option value='BharathDartCod'>BharathDartCod</option>
+        <option value='GroundEtailPrepaid'>GroundEtailPrepaid</option>
+        <option value='GroundEtailCod'>GroundEtailCod</option>
+        <option value='Apex'>Apex</option>
+        <option value='Surface'>Surface</option>
+
+            </select>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <!-- API Response -->
+    <div id="tableContainer">
+        
+    </div>
+</div>
+
+<script src="js/TransitScript.js">
+
+</script>
+
+</body>
+</html>

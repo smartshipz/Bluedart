@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Account Configuration</title>
+   <link rel="stylesheet" href="css/AddressCss.css">
+</head>
+<body>
+
+    <div class="upload-container">
+        <h2>Upload Address Data</h2>
+        
+        <div class="note-box">
+            <p style="margin-top:0"><strong>Note:</strong> Save your Excel as <b>Text (Tab delimited) (.txt)</b>.</p><br>
+            <strong>Required Headers:</strong>
+            <span class="header-spec">CONSIGNEECODE, CONSIGNEE_NAME, ADDRESS1, ADDRESS2, ADDRESS3, CPINCODE, PHONE</span>
+        </div>
+
+        <input type="file" id="csvFile" accept=".txt,.csv" />
+        <button onclick="handleFileUpload()">Upload to Database</button>
+    </div>
+<script src="js/AccountScript.js">
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,96 @@
+ body {
+        font-family: Arial, sans-serif;
+        background-color: #f4f6f8;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        padding: 20px;
+    }
+
+    .container {
+        background: #fff;
+        padding: 25px 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        max-width: 700px;
+        width: 100%;
+    }
+
+    h3 {
+        text-align: center;
+        color: #333;
+        margin-bottom: 20px;
+    }
+
+    label {
+        font-weight: bold;
+        margin-top: 10px;
+        display: block;
+        color: #555;
+    }
+
+input[type="text"], 
+input[type="number"],
+select {
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    /* This prevents the "merging/overlapping" */
+    box-sizing: border-box; 
+}
+    button {
+        margin-top: 20px;
+        width: 100%;
+        padding: 10px;
+        background-color: #007BFF;
+        border: none;
+        border-radius: 5px;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+.input-row {
+    display: flex;
+    gap: 10px; /* Space between columns */
+    width: 100%;
+    margin-top: 10px;
+}
+
+.field-group {
+    flex: 1; /* Gives each column equal width (33% each) */
+    min-width: 0; /* Prevents flex children from overflowing */
+}
+
+.field-group span, .field-group label {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: #555;
+}
+
+    button:hover {
+        background-color: #0056b3;
+    }
+.mps-container {
+    border: 2px solid #007BFF; /* Blue border to match your button */
+    padding: 15px 30px;        /* More horizontal padding for the oval look */
+    border-radius: 5px;       /* This creates the oval boarder */
+    margin-top: 10px;
+    background-color: #f9f9f9; /* Light background to make it pop */
+    box-sizing: border-box;
+}
+
+/* Adjust the row inside the oval so it doesn't hit the curved edges */
+.mps-container .input-row {
+    margin-bottom: 0; 
+    gap: 15px;
+}
+
+/* Ensure inputs don't break the oval shape */
+.mps-container input {
+    border-radius: 15px; /* Rounded inputs to match the theme */
+}

@@ -1,0 +1,53 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BlueDart Api Ver 3.0</title>
+<link rel="stylesheet" href="css/Style.css">
+</head>
+<body onload="token()">
+  <nav>
+    <div class="logo">
+      <img src="bdlogo.png" alt="Blue Dart Logo" />
+<p style="font-size: 15px; margin:0;">BlueDartApi V-3.0</p>
+    </div>
+    <ul class="nav-links">
+      <li class="dropdown"
+          onmouseenter="openDropdown(event)"
+          onmouseleave="closeDropdown(event)">
+        <a href="#">Finder ▾</a>
+        <ul class="dropdown-content">
+          <li><a href="#" onclick="loadPage('Finder.html')">Pincode Search</a></li>
+          <li><a href="#" onclick="loadPage('ProdSearch2.html')">Product Search</a></li>
+          <li><a href="#" onclick="loadPage('TransitTime1.html')">Transit Time Finder</a></li>
+          <li><a href="#" onclick="handleSelection()">Alt Instruction</a></li>
+          <li><a href="#" onclick="loadPage('AddressBook1.html')">Address Book</a></li>
+        </ul>
+      </li>
+
+<li class="dropdown"
+          onmouseenter="openDropdown(event)"
+          onmouseleave="closeDropdown(event)">
+        <a href="#">Mps Printing ▾</a>
+        <ul class="dropdown-content">
+
+
+      <li><a href="#" onclick="loadPage('MpsPrint.html')">Mps Manual</a></li>
+<li><a href="#" onclick="loadPage('MpsApi.html')">Mps API</a></li>
+   </ul>
+      </li>
+      <li><a href="#" onclick="loadPage('tracking.html')">Tracking</a></li>
+      <li><a href="#" onclick="loadPage('CreateShipments.html')">Awb Generation</a></li>
+      <li><a href="#" onclick="handleSelection()">Bulk Import</a></li>
+      <li><a href="#" onclick="loadPage('AccountConfig.html')">Account Configuration</a></li>
+    </ul>
+  </nav>
+
+  <iframe id="contentFrame"></iframe>
+
+  <script src="js/Main.js">
+
+  </script>
+</body>
+</html>

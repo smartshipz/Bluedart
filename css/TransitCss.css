@@ -1,0 +1,170 @@
+* {
+      margin: 100;
+      padding: 50;
+      box-sizing: border-box;
+      font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+justify-content: center;
+    }
+ body {
+      background: #f3f6fa;
+      color: #333;
+      padding: 2px;
+width: 100%;
+justify-content: center;
+    }
+form {
+      width: 100%;
+      background: #fff;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+
+    }
+
+
+
+    .container {
+
+  background: #fff;
+    padding: 30px;         /* Slightly more padding for a wider look */
+    border-radius: 12px;
+    width: 100%;            /* Responsive: takes 95% of screen on mobile */
+    max-width: 950px;      /* Increased from 500px to 900px */
+    margin: 40px auto;     /* Centers it on the page */
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12); /* Slightly deeper shadow for the larger size */
+    box-sizing: border-box;
+    }
+
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .row {
+        display: flex;
+        gap: 10px;
+        margin-bottom: 15px;
+    }
+
+    .form-group {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+
+
+    
+    }
+
+    label {
+        font-weight: 600;
+        margin-bottom: 5px;
+        color: #555;
+    }
+
+    input, select {
+        padding: 10px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+    }
+
+    input:focus, select:focus {
+        border-color: #007bff;
+        outline: none;
+    }
+
+    .full-width {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+
+    button {
+        width: 100%;
+        padding: 12px;
+        background: #007bff;
+        border: none;
+        color: white;
+        font-size: 16px;
+        border-radius: 6px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background: #0056b3;
+    }
+
+    #apiResponse {
+        margin-top: 20px;
+    }
+
+    iframe {
+        width: 100%;
+        height: 400px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        margin-top: 10px;
+        display: none;
+    }
+
+#tableContainer {
+    margin-top: 30px;
+    overflow-x: auto; /* Makes it mobile-friendly */
+}
+
+/* The Table Styling */
+#resultTable {
+    width: 100%;
+    border-collapse: collapse;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    background-color: #ffffff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08); /* Soft shadow */
+}
+
+/* The Header */
+#resultTable thead th {
+    background-color: #1e3a5f; /* Deep Blue */
+    color: #ffffff;
+    padding: 18px;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Table Cells */
+#resultTable td {
+    padding: 14px 20px;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 14px;
+    color: #444;
+}
+
+/* Labels (The 'Strong' tags or grey columns) */
+#resultTable td:nth-child(odd) {
+    background-color: #f8f9fa; /* Light grey for labels */
+    font-weight: 600;
+    color: #2c3e50;
+    width: 20%; /* Fixed width for labels */
+}
+
+/* Values */
+#resultTable td:nth-child(even) {
+    width: 30%;
+}
+
+/* Status Styling */
+.status-badge {
+    background-color: #e8f5e9;
+    color: #2e7d32;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+/* Hover effect on rows */
+#resultTable tbody tr:hover {
+    background-color: #f1f4f9;
+}
+

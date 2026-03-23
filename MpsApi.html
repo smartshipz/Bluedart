@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Blue Dart Label Generator</title>
+
+ <link rel="stylesheet" href="css/MpsapiCss.css">
+<script src="js/mapping.js"></script> 
+</head>
+
+<body>
+
+<div class="container">
+  <h2>Blue Dart MPS Label Printing</h2>
+
+  <!-- PRINT LOGO OPTION -->
+  <div class="radio-row">
+    <span class="radio-label">Print With BD Logo</span>
+    <div class="radio-options">
+      <label>
+        <input type="radio" name="answer" value="yes">
+        Yes
+      </label>
+      <label>
+        <input type="radio" name="answer" value="no" checked>
+        No
+      </label>
+    </div>
+  </div>
+
+  <label>AWB Number:</label>
+  <input type="number" id="num" placeholder="Enter the AWB Number" onkeydown="if(event.key === 'Enter') { event.preventDefault(); const form = this.form || document; const index = [...form.querySelectorAll('input, select, textarea')].indexOf(this); form.querySelectorAll('input, select, textarea')[index + 1]?.focus(); }"   >
+  <label>No. of Pieces:</label>
+  <input type="number" id="num1" placeholder="Count" onkeydown="if(event.keyCode==13) mps()" >
+
+  
+
+  <div class="button-group">
+    <button onclick="mps()">Generate</button>
+   
+  </div>
+</div>
+
+
+
+<!-- Hidden print area -->
+<div id="printSection"></div>
+
+<script>
+let storedData = localStorage.getItem("ckey");
+ //   if (!storedData) {
+    //    alert("Account Configuration is Empty");
+   //     return;
+  //  }
+
+    let data = JSON.parse(storedData);
+    var login = data.loginid || "";
+    var tracklis = data.tkey || "";
+    var org = data.orgmps || "";
+    var addleft = data.mpsleft || "";
+    var addtop = data.mpstop || "";
+
+  let allOutput = "";
+
+  function clearForm() {
+    document.getElementById("num").value = "";
+document.getElementById("num1").value = "";
+    document.querySelector('input[name="answer"][value="no"]').checked = true;
+setTimeout(() => {
+ focusAWB();
+},50);  
+}
+
+
+function focusAWB(){
+	document.getElementById("num").focus();
+}
+
+  function mps() {
+
+const myHeaders = new Headers();
+myHeaders.append("JWTToken", localStorage.getItem("key"));
+
+const requestOptions = {
+  method: "GET",
+  headers: myHeaders,
+  redirect: "follow"
+};
+
+let a = document.getElementById("num").value;
+let b = Number(document.getElementById("num1").value) || 1;
+const url = `https://apigateway.bluedart.com/in/transportation/tracking/v1?handler=tnt&loginid=${login}&awb=awb&numbers=${a}&format=json&lickey=${tracklis}&scan=0&action=custawbquery&verno=1`;
+
+fetch(url, requestOptions)
+  .then((response) => response.json()) // 1. Use .json() to parse the response body
+  .then((result) => {
+    const shipment = result.ShipmentData.Shipment[0];
+    
+    const dest = shipment.DestionationAreaCode; 
+    const ref = shipment.RefNo;
+    const serv = shipment.Service;     // "Dart Apex - Door To Door"
+    const darea =areaData[dest] || "Not Found";
+
+const dst=darea+"/"+dest
+const l1=31+parseInt(addleft)
+const l2=128+parseInt(addleft)
+const l3=110+parseInt(addleft)
+const t1=30+parseInt(addtop)
+const t2=168+parseInt(addtop)
+const t3=188+parseInt(addtop)
+const t4=110+parseInt(addtop)
+const t5=250+parseInt(addtop)
+const t6=300+parseInt(addtop)
+const t7=350+parseInt(addtop)
+const t8=400+parseInt(addtop)
+
+
+
+    let printWithLogo = document.querySelector('input[name="answer"]:checked').value;
+
+    allOutput = "";
+
+    for (let i = 1; i <= b; i++) {
+      let k = a + "-" + i.toString().padStart(4, '0');
+
+      let logoBlock = printWithLogo === "yes"
+        ? `TEXT ${l1},${t1},"3",0,2,2,"BLUE DART"
+BAR 31,55,500,3
+`
+        : "";
+      allOutput += `REFERENCE 0,0
+DIRECTION 1
+SPEED 3.0
+GAP 0.12,0
+SIZE 89mm 60mm
+SET PEEL OFF
+DENSITY 8
+CLS
+CLS
+${logoBlock}
+TEXT ${l2},${t2},"2",0,2,2,"${k}"
+BAR ${l1},${t3},500,3
+BARCODE ${l3},${t4},"128",46,0,0,3,0,"${k}"
+TEXT ${l1},${t5},"2",0,2,2,"Dstn: ${org.toUpperCase()} - ${dst.toUpperCase()}"
+TEXT ${l1},${t6},"2",0,2,2,"Pcs : ${i} of ${b}"
+TEXT ${l1},${t7},"2",0,2,2,"Awb : ${a}"
+TEXT ${l1},${t8},"2",0,2,2,"Ref : ${ref}"
+PRINT 1,1
+`;
+    }
+
+
+ document.getElementById("printSection").innerHTML = `<pre>${allOutput}</pre>`;
+window.print();
+    
+    
+  })
+  .catch((error) => console.error(error));
+
+ 
+
+    
+
+
+
+    // CLEAR FORM AFTER GENERATE
+    clearForm();
+  }
+
+ 
+</script>
+
+</body>
+</html>
