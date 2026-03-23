@@ -114,6 +114,7 @@ const t5=250+parseInt(addtop)
 const t6=300+parseInt(addtop)
 const t7=350+parseInt(addtop)
 const t8=400+parseInt(addtop)
+const b1=220+parseInt(addtop)
 
 
 
@@ -126,7 +127,7 @@ const t8=400+parseInt(addtop)
 
       let logoBlock = printWithLogo === "yes"
         ? `TEXT ${l1},${t1},"3",0,2,2,"BLUE DART"
-BAR 31,55,500,3
+BAR ${l1},${b1},700,3
 `
         : "";
       allOutput += `REFERENCE 0,0
