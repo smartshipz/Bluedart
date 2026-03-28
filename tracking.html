@@ -4,18 +4,28 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Blue Dart Tracking</title>
- <link rel="stylesheet" href="css/TrackingCss.css">
+ <link href="https://fonts.googleapis.com" rel="stylesheet">
+ <link rel="stylesheet" href="css/FinderCss.css">
 </head>
 <body>
 
-  <div class="container">
+<div class="card">
+<header>
     <h2>Blue Dart Tracking</h2>
+    <p class="subtitle">If It’s Important, Blue Dart It!</p>
+  </header>
+<div class="form-row">
+   <div class="input-group full-width">
     <label for="awbNum">Enter the AWB Number</label>
-    <input type="text" id="awbNum" placeholder="Enter the AWB Number" />
-    <button onclick="track()">Search</button>
+    <input type="text" id="awbNum" placeholder="Enter the AWB Number" /></div>
+   </div>
 
-    <div id="result"></div>
-  </div>
+    <button onclick="track()">Search</button>
+<div id="tableContainer"> </div>
+</div>
+
+
+  
 
   <script src="js/TrackingScript.js">
 
