@@ -4,29 +4,41 @@
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Account Configuration</title>
+<link href="https://fonts.googleapis.com" rel="stylesheet">
 
  <link rel="stylesheet" href="css/AccountCss.css">
 <script src="js/AccountScript.js"></script> 
+
 </head>
 <body>
 
 <div class="container">
-    <h3>Account Configuration</h3>
+    <header>
+    <h2>Account Congifuration Setting</h2>
+    <p class="subtitle">Manage your profile, credentials, and preferences.</p>
+  </header>
+
+<div class="form-row">
+<div class="input-group full-width">
 
     <label>Enter the Login ID:</label>
-    <input type="text" id="loginid">
+    <input type="text" id="loginid"><br><br>
 
     <label>Shipping API License Key:</label>
-    <input type="text" id="skey">
+    <input type="text" id="skey"><br><br>
+
 
     <label>Tracking API License Key:</label>
-    <input type="text" id="tkey">
+    <input type="text" id="tkey"><br><br>
+
 
     <label>Customer Code Area:</label>
-    <input type="text" id="area">
+    <input type="text" id="area"><br><br>
+
 
     <label>Customer Code:</label>
-    <input type="text" id="code">
+    <input type="text" id="code"><br><br>
+
 
     <label>Pickup Address:</label>
     <input type="text" id="cname" placeholder="Company Name">
@@ -35,16 +47,19 @@
     <input type="text" id="cadr3" placeholder="Address Line 3">
 
     <label>Pincode:</label>
-    <input type="text" id="cpin">
+    <input type="text" id="cpin"><br><br>
+
 
     <label>Phone No:</label>
-    <input type="text" id="phone">
+    <input type="text" id="phone"><br><br>
+
     <label>Enable Auto Reference: </label>
 <select name="autoRef" id="autoRef">
 	<option value='yesAuto'>Yes</option>
         <option value='noAuto' selected>No</option>
 </select><br><br>
-
+</div>
+</div>
 
 
     
