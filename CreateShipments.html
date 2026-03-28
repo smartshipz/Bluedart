@@ -4,66 +4,92 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Shipment Booking Form</title>
-
+<link href="https://fonts.googleapis.com" rel="stylesheet">
 <link rel="stylesheet" href="css/CreateShipment.css">
+
 </head>
 <body>
 
   <form>
     <!-- Shipper Section -->
-    <div class="form-section">
-      <h2>Shipper Address</h2>
-      <div class="grid">
-        <div><label><b>Area</b></label><input type="text" name="area" id="area" placeholder="Area"></div>
-        <div><label><b>Shipper Code</b></label><input type="text" name="code" id="code" placeholder="Customer Code"></div>
-        <div><label><center>CheckTopay</center></label><input type="checkbox" name="cbox" id="cbox" onclick="displayConfig()" ></div>
-<div><label><input type="text" id="search" placeholder="Address Code" onblur="AddressData()"></div>
 
-        <div><input type="text" name="sname" id="sname" placeholder="Shipper Name"></div>
-        <div><input type="text" name="sattn" id="sattn" placeholder="Sender"></div>
-        <div><input type="text" name="sadd1" id="sadd1" placeholder="Address 1"></div>
-        <div><input type="text" name="sadd2" id="sadd2" placeholder="Address 2"></div>
-        <div><input type="text" name="sadd3" id="sadd3" placeholder="Address 3"></div>
-        <div><input type="number" name="spin" id="spin" placeholder="Pincode"></div>
-        <div><input type="tel" name="stel" id="stel" placeholder="Mobile Number"></div>
+    <div class="form-section">
+      <h2>Billing Account</h2>
+      <div class="grid">
+        <div><span><b>Area :</b></span><input type="text" name="area" id="area" placeholder="Area"></div>
+        <div><span><b>Shipper Code :</b></span><input type="text" name="code" id="code" placeholder="Customer Code"></div>
+
+
+<div class="billing-options">
+  <!-- CheckTopay Group -->
+  <div class="option-group">
+        <input type="checkbox" id="cbox" onclick="displayConfig()" >
+	<label for="checktopay">Is Topay Mode :</label>
+  </div>
+
+<div class="option-group">
+    
+    <input type="checkbox" id="Reverse" onclick="displayConfig()">
+    <label for="reversepk">Is Reverse Pickup :</label>
+  </div>
+</div>
+
+
+       </div></div>
+
+	
+       <div class="form-section">
+<h2>Shipper Address</h2>
+         <div class="grid">
+        <div><p class="subtitle">Address Code :</p><input type="text" id="search" placeholder="" onblur="AddressData()"></div>
+        <div><p class="subtitle">Shipper Name :</p><input type="text" name="sname" id="sname" placeholder=""></div>
+        <div><p class="subtitle">Sender Name :</p><input type="text" name="sattn" id="sattn" placeholder=""></div>
+        <div><p class="subtitle">Shipper Address Line 1 :</p><input type="text" name="sadd1" id="sadd1" placeholder=""></div>
+        <div><p class="subtitle">Shipper Address Line 2 :</p><input type="text" name="sadd2" id="sadd2" placeholder=""></div>
+        <div><p class="subtitle">Shipper Address Line 3 :</p><input type="text" name="sadd3" id="sadd3" placeholder=""></div>
+        <div><p class="subtitle">Shipper Pincode :</p><input type="number" name="spin" id="spin" placeholder=""></div>
+        <div><p class="subtitle">Shipper Mobile :</p><input type="tel" name="stel" id="stel" placeholder=""></div>
       </div>
     </div>
+
+
 
     <!-- Consignee Section -->
     <div class="form-section">
       <h2>Consignee Address</h2>
       <div class="grid">
-        <div><label><input type="text" id="searchCode" placeholder="Enter Consignee Code" onblur="fetchData()"></div>
-        <div><input type="text" name="cname" id="cname" placeholder="Company Name"></div>
-        <div><input type="text" name="cattn" id="cattn" placeholder="Attention"></div>
-        <div><input type="text" name="add1" id="cadd1" placeholder="Address 1"></div>
-        <div><input type="text" name="add2" id="cadd2" placeholder="Address 2"></div>
-        <div><input type="text" name="add3" id="cadd3" placeholder="Address 3"></div>
-        <div><input type="number" name="pin" id="cpin" placeholder="Pincode"></div>
-        <div><input type="tel" name="tel" id="ctel" placeholder="Mobile Number"></div>
+        <div><p class="subtitle">Consignee Code :</p><input type="text" id="searchCode" placeholder="" onblur="fetchData()"></div>
+        <div><p class="subtitle">Consignee Company Name :</p><input type="text" name="cname" id="cname" placeholder=""></div>
+        <div><p class="subtitle">Consignee Attention :</p><input type="text" name="cattn" id="cattn" placeholder=""></div>
+        <div><p class="subtitle">Consignee Address Line 1 :</p><input type="text" name="add1" id="cadd1" placeholder=""></div>
+        <div><p class="subtitle">Consignee Address Line 2 :</p><input type="text" name="add2" id="cadd2" placeholder=""></div>
+        <div><p class="subtitle">Consignee Address Line 3 :</p><input type="text" name="add3" id="cadd3" placeholder=""></div>
+        <div><p class="subtitle">Consignee Pincode :</p><input type="number" name="pin" id="cpin" placeholder=""></div>
+        <div><p class="subtitle">Consignee Mobile No :</p><input type="tel" name="tel" id="ctel" placeholder=""></div>
       </div>
     </div>
+
 
     <!-- Service Section -->
     <div class="form-section">
       <h2>Service Details</h2>
       <div class="grid">
-        <div><input type="number" id="pcs" onchange="pcs1()" placeholder="Pieces"></div>
-        <div><input type="number" name="wgt" id="wgt" placeholder="Weight"></div>
-        <div><input type="number" name="dvalue" id="dvalue" placeholder="Declared Value"></div>
-        <div><input type="number" name="colamt" id="colamt" placeholder="Collectable Amount"></div>
-        <div><input type="date" name="pd" id="pd" value=date() placeholder="Pickup Date"></div>
-        <div><input type="text" name="ptime" id="ptime" placeholder="Pickup Time"></div>
-        <div><input type="text" name="refno" , id="refno" placeholder="Reference Number"></div>
-	<div><input type="text" name="awbno" id="awbno" placeholder="Waybill Number"></div>
-      </div><br>
+        <div><p class="subtitle">Pieces :</p><input type="number" id="pcs" onchange="pcs1()" placeholder=""></div>
+        <div><p class="subtitle">Weight :</p><input type="number" name="wgt" id="wgt" placeholder=""></div>
+        <div><p class="subtitle">Declared Value :</p><input type="number" name="dvalue" id="dvalue" placeholder=""></div>
+        <div><p class="subtitle">Collectable Amount :</p><input type="number" name="colamt" id="colamt" placeholder=""></div>
+        <div><p class="subtitle">Pickup Date :</p><input type="date" name="pd" id="pd" value=date() placeholder=""></div>
+        <div><p class="subtitle">Pickup Time :</p><input type="text" name="ptime" id="ptime" placeholder=""></div>
+        <div><p class="subtitle">Reference Number :</p><input type="text" name="refno" , id="refno" placeholder=""></div></b>
+	<div><p class="subtitle">AWB Number :</p><input type="text" name="awbno" id="awbno" placeholder=""></div>
+      </div><br><br>
 
 
       <div class="form-row">
 <div class="input-group">
-      <label>Dispatch Mode :</label>
+     <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Dispatch Mode :</b></span>
       <select name="prod" id="sel">
-	<option value='SelectMode'>SelectMode</option>
+	<option value='SelectMode'>----Choose Mode----</option>
         <option value='AirEtailPrepaid'>AirEtailPrepaid</option>
         <option value='AirEtailCod'>AirEtailCod</option>
         <option value='DomesticPriority'>DomesticPriority</option>
@@ -76,7 +102,7 @@
       </select>
 </div>
 <div class="input-group">
-      <label>Value Added Service : </label>
+      <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Value Added Service : </b></span>
       <select name="vas" id="vas">
 	
       </select>
@@ -84,7 +110,7 @@
 
 <div class="input-group">
 
-<label>Label Size :</label>
+<span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Label Size :</b></span>
       <select name="pdf" id="pdf">
         <option value='a4s'>A4 - Single Copy</option>
         <option value='a43'>A4 - Three Copy</option>
@@ -95,26 +121,22 @@
 </div>
 </div><br>
 
-      <div class="radio-group">
-
-	<div><label><b>Product Type :</b></label></div>
+        <div class="radio-group">
+	<div><span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Product Type:</b></span></div>
 	<div>Dox<input type="radio" name="ptype" value="dox"></div>
 	<div>Non-Dox <input type="radio" name="ptype" value="non-dox" checked></div>
 
-        <div><label><b>Register Pickup :</b></label></div>
+        <div><span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Register Pickup :</b></span></div>
 	<div>Yes<input type="radio" name="pickup" value="yes" checked></div>
 	<div>No<input type="radio" name="pickup" value="no"></div>
 
+   </div><br>
 
-	<div><label><b>IsReversePickup :</b></label></div>
-	<div>Yes<input type="radio" name="revpk" value="yes"></div>
-	<div>No<input type="radio" name="revpk" value="no" checked></div><br>
-        </div>
 
-      <br><label><b>Commodity :<b></label>
+      <span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Commodity :<b></span>
       <input type="text" name="ccmdty" id="ccmdty">
       </div>
-      <label><b>Diminsions :</b></label>
+      <span><b style="font-family: sans-serif; font-size: 16px; color: #000000;"> Diminsions :</b></span>
       <div id="res"> </div>
 
     </div>
@@ -124,11 +146,18 @@
 
 
 <!-- API Response Section -->
-  <div id="apiResponse">
-    
+<div id="loadingOverlay" style="display: none;">
+    <div class="spinner"></div>
+    <p>Generating Waybill...</p>
+</div>
+  <div id="apiResult">
+   
+  </div>
+  <embed id="pdfViewer" src="" type="application/pdf" width="100%" height="500px" style="display:none;" />
+    <div id="apiResponse">
     <pre id="responseText"></pre>
     <iframe id="pdfViewer" style="display:none; width:100%; height:500px; border:1px solid #ddd; margin-top:10px;"></iframe>
- <iframe id="pdfViewer"></iframe>
+    <iframe id="pdfViewer"></iframe>
 
   </div>
 
