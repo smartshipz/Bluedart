@@ -4,19 +4,22 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlueDart Api Ver 3.0</title>
+<link href="https://fonts.googleapis.com" rel="stylesheet">
 <link rel="stylesheet" href="css/Style.css">
 </head>
 <body onload="token()">
   <nav>
     <div class="logo">
-      <img src="BDLOGO.png" alt="Blue Dart Logo" />
-<p style="font-size: 15px; margin:0;">BlueDartApi V-3.0</p>
+      <img src="bdlogo.png" alt="Blue Dart Logo" /><p style="font-size: 18px; margin:0; display: flex; align-items: baseline;">
+  <b>Blue Dart Api</b>
+  <sub style="color:var(--accent); font-weight:700; margin-left: 4px;">V3.0</sub>
+</p>
     </div>
     <ul class="nav-links">
       <li class="dropdown"
           onmouseenter="openDropdown(event)"
           onmouseleave="closeDropdown(event)">
-        <a href="#">Finder ▾</a>
+        <a href="#">🔍 Finder ▾</a>
         <ul class="dropdown-content">
           <li><a href="#" onclick="loadPage('Finder.html')">Pincode Search</a></li>
           <li><a href="#" onclick="loadPage('ProdSearch2.html')">Product Search</a></li>
@@ -29,18 +32,18 @@
 <li class="dropdown"
           onmouseenter="openDropdown(event)"
           onmouseleave="closeDropdown(event)">
-        <a href="#">Mps Printing ▾</a>
+        <a href="#">🖨️ Mps Printing ▾</a>
         <ul class="dropdown-content">
 
 
-      <li><a href="#" onclick="loadPage('Mpsprint.html')">Mps Manual</a></li>
+      <li><a href="#" onclick="loadPage('MpsPrint.html')">Mps Manual</a></li>
 <li><a href="#" onclick="loadPage('MpsApi.html')">Mps API</a></li>
    </ul>
       </li>
-      <li><a href="#" onclick="loadPage('tracking.html')">Tracking</a></li>
-      <li><a href="#" onclick="loadPage('CreateShipments.html')">Awb Generation</a></li>
-      <li><a href="#" onclick="handleSelection()">Bulk Import</a></li>
-      <li><a href="#" onclick="loadPage('AccountConfig.html')">Account Configuration</a></li>
+      <li><a href="#" onclick="loadPage('tracking.html')">📍 Tracking</a></li>
+      <li><a href="#" onclick="loadPage('CreateShipments.html')">📦 AWB Gen</a></li>
+      <li><a href="#" onclick="handleSelection()">📥 Bulk Import</a></li>
+      <li><a href="#" onclick="loadPage('AccountConfig.html')">⚙️ Account Config</a></li>
     </ul>
   </nav>
 
