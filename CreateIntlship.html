@@ -1,0 +1,389 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipment Booking Form</title>
+<link href="https://fonts.googleapis.com" rel="stylesheet">
+<link rel="stylesheet" href="css/IntlShipment.css">
+
+</head>
+<body>
+
+  <form>
+    <!-- Shipper Section -->
+
+
+
+    <div class="form-section">
+      <div class="header-row">
+
+    <h2>Billing Account</h2>
+<img src="dhl.png" alt="Blue Dart Logo" />
+
+    <span class="booking-type">INTERNATIONAL BOOKING</span>
+  </div>
+      <div class="grid">
+        <div><span><b>Area :</b></span><input type="text" name="area" id="area" placeholder="Area"></div>
+        <div><span><b>Shipper Code :</b></span><input type="text" name="code" id="code" placeholder="Customer Code"></div>
+
+
+<div class="billing-options">
+  <!-- CheckTopay Group -->
+  <div class="option-group">
+        <input type="checkbox" id="cbox" onclick="displayConfig()" >
+	<label for="checktopay">Is Topay Mode :</label>
+  </div>
+
+</div>
+
+
+       </div></div>
+
+	
+       <div class="form-section">
+<h2>Shipper Address</h2>
+         <div class="grid">
+        <div><label for="Address">Address Code :</lable><input type="text" id="search" placeholder="" onblur="AddressData()"></div>
+        <div><label for="Shipper">Shipper Name :</lable><input type="text" name="sname" id="sname" placeholder=""></div>
+        <div><label for="Sender">Sender Name :</lable><input type="text" name="sattn" id="sattn" placeholder=""></div>
+        <div><label for="add1">Shipper Address Line 1 :</lable><input type="text" name="sadd1" id="sadd1" placeholder=""></div>
+        <div><label for="add2">Shipper Address Line 2 :</lable><input type="text" name="sadd2" id="sadd2" placeholder=""></div>
+        <div><label for="add2">Shipper Address Line 3 :</lable><input type="text" name="sadd3" id="sadd3" placeholder=""></div>
+        <div><label for="add3">Shipper Pincode :</lable><input type="number" name="spin" id="spin" placeholder=""></div>
+        <div><label for="mob">Shipper Mobile :</lable><input type="tel" name="stel" id="stel" placeholder=""></div>
+        <div><label for="gst">Shipper GST Number :</lable><input type="text" name="sgst" id="sgst" placeholder=""></div>
+
+      </div>
+    </div>
+
+
+
+    <!-- Consignee Section -->
+    <div class="form-section">
+      <h2>Consignee Address</h2>
+      <div class="grid">
+        <div><label for="consigneecode">Address Code :</p><input type="text" id="searchCode" placeholder="" onblur="fetchData()" "></div>
+        <div><label for="compname">Consignee Company Name :</p><input type="text" name="cname" id="cname" placeholder=""></div>
+        <div><label for="attention">Consignee Attention :</p><input type="text" name="cattn" id="cattn" placeholder=""></div>
+
+        
+ <div class="span-2">
+    <label for="Consigneeaddress">Consignee Address:</lable>
+    <input type="text" name="add1" id="cadd1" >
+  </div>
+
+
+        <div><label for="city">Consignee City :</label><input type="text" name="city" id="city" placeholder=""></div>
+
+<div><label for="country-select">Country:</label>
+<select name="country" id="country-select">
+  <option value="" disabled selected>--Select Country--</option>
+  <option value="AD">ANDORRA</option>
+  <option value="AO">ANGOLA</option>
+  <option value="AM">ARMENIA</option>
+  <option value="AR">ARGENTINA</option>
+  <option value="AS">AMERICAN SAMOA</option>
+  <option value="AT">AUSTRIA</option>
+  <option value="AU">AUSTRALIA</option>
+  <option value="AZ">AZERBAIJAN</option>
+  <option value="BA">BOSNIA AND HERZEGOVINA</option>
+  <option value="BD">BANGLADESH</option>
+  <option value="BE">BELGIUM</option>
+  <option value="BG">BULGARIA</option>
+  <option value="BH">BAHRAIN</option>
+  <option value="BR">BRAZIL</option>
+  <option value="BY">BELARUS</option>
+  <option value="CA">CANADA</option>
+  <option value="CH">SWITZERLAND</option>
+  <option value="CN">CHINA, PEOPLE'S REPUBLIC</option>
+  <option value="CO">COLOMBIA</option>
+  <option value="CU">CUBA</option>
+  <option value="CY">CYPRUS</option>
+  <option value="CZ">CZECH REPUBLIC, THE</option>
+  <option value="DE">GERMANY</option>
+  <option value="DK">DENMARK</option>
+  <option value="AE">DUBAI</option>
+  <option value="DZ">ALGERIA</option>
+  <option value="EC">ECUADOR</option>
+  <option value="EE">ESTONIA</option>
+  <option value="ES">SPAIN</option>
+  <option value="FI">FINLAND</option>
+  <option value="FM">MICRONESIA, FEDERATED STATES OF</option>
+  <option value="FO">FAROE ISLANDS</option>
+  <option value="FR">FRANCE</option>
+  <option value="GB">UNITED KINGDOM</option>
+  <option value="GE">GEORGIA</option>
+  <option value="GF">FRENCH GUIANA</option>
+  <option value="GG">GUERNSEY</option>
+  <option value="GI">GIBRALTAR</option>
+  <option value="GL">GREENLAND</option>
+  <option value="GP">GUADELOUPE</option>
+  <option value="GR">GREECE</option>
+  <option value="GU">GUAM</option>
+  <option value="GY">GUYANA</option>
+  <option value="HK">HONG KONG</option>
+  <option value="HU">HUNGARY</option>
+  <option value="IC">CANARY ISLANDS, THE</option>
+  <option value="ID">INDONESIA</option>
+  <option value="IL">ISRAEL</option>
+  <option value="IN">INDIA</option>
+  <option value="IS">ICELAND</option>
+  <option value="IT">ITALY</option>
+  <option value="JE">JERSEY</option>
+  <option value="JP">JAPAN</option>
+  <option value="KG">KYRGYZSTAN</option>
+  <option value="KH">CAMBODIA</option>
+  <option value="KR">KOREA, REPUBLIC OF (SOUTH K.)</option>
+  <option value="KV">KOSOVO</option>
+  <option value="KZ">KAZAKHSTAN</option>
+  <option value="LI">LIECHTENSTEIN</option>
+  <option value="LT">LITHUANIA</option>
+  <option value="LU">LUXEMBOURG</option>
+  <option value="LV">LATVIA</option>
+  <option value="MA">MOROCCO</option>
+  <option value="MC">MONACO</option>
+  <option value="MD">MOLDOVA, REPUBLIC OF</option>
+  <option value="ME">MONTENEGRO, REPUBLIC OF</option>
+  <option value="MG">MADAGASCAR</option>
+  <option value="MH">MARSHALL ISLANDS</option>
+  <option value="MK">MACEDONIA, REPUBLIC OF</option>
+  <option value="MN">MONGOLIA</option>
+  <option value="MO">MACAU</option>
+  <option value="MP">NORTHERN MARIANA ISLANDS</option>
+  <option value="MQ">MARTINIQUE</option>
+  <option value="MV">MALDIVES</option>
+  <option value="MW">MALAWI</option>
+  <option value="MX">MEXICO</option>
+  <option value="MY">MALAYSIA</option>
+  <option value="NC">NEW CALEDONIA</option>
+  <option value="NL">NETHERLANDS, THE</option>
+  <option value="NO">NORWAY</option>
+  <option value="NZ">NEW ZEALAND</option>
+  <option value="PG">PAPUA NEW GUINEA</option>
+  <option value="PH">PHILIPPINES, THE</option>
+  <option value="PK">PAKISTAN</option>
+  <option value="PL">POLAND</option>
+  <option value="PR">PUERTO RICO</option>
+  <option value="PT">PORTUGAL</option>
+  <option value="PW">PALAU</option>
+  <option value="RE">REUNION, ISLAND OF</option>
+  <option value="RO">ROMANIA</option>
+  <option value="RS">SERBIA, REPUBLIC OF</option>
+  <option value="RU">RUSSIAN FEDERATION, THE</option>
+  <option value="SE">SWEDEN</option>
+  <option value="SG">SINGAPORE</option>
+  <option value="SH">SAINT HELENA</option>
+  <option value="SI">SLOVENIA</option>
+  <option value="SK">SLOVAKIA</option>
+  <option value="SM">SAN MARINO</option>
+  <option value="SZ">SWAZILAND</option>
+  <option value="TH">THAILAND</option>
+  <option value="TN">TUNISIA</option>
+  <option value="TR">TURKEY</option>
+  <option value="TW">TAIWAN</option>
+  <option value="UA">UKRAINE</option>
+  <option value="US">UNITED STATES OF AMERICA</option>
+  <option value="UZ">UZBEKISTAN</option>
+  <option value="VI">VIRGIN ISLANDS (US)</option>
+  <option value="BL">ST. BARTHELEMY</option>
+  <option value="YT">MAYOTTE</option>
+  <option value="ZA">SOUTH AFRICA</option>
+</select>
+</div>
+        <div><label for="pincode">Consignee Pincode :</lable><input type="number" name="pin" id="cpin" placeholder=""></div>
+        <div><label for="mobile">Consignee Mobile No :</lable><input type="tel" name="tel" id="ctel" placeholder=""></div>
+      </div>
+    </div>
+
+
+    <!-- Service Section -->
+    <div class="form-section">
+      <h2>Service Details</h2>
+      <div class="grid">
+        <div><label for="pieces">Pieces :</lable><input type="number" id="pcs" onchange="pcs1()"  placeholder=""></div>
+        <div><label for="Weight">Weight :</label><input type="number" name="wgt" id="wgt" value="0.5" placeholder=""></div>
+
+<div><label for="Currenty">Currency :</lable>
+<select name="currency" id="currency">
+  <option value="AED">AED - UAE Dirham</option>
+  <option value="AUD">AUD - Australian Dollar</option>
+  <option value="BHD">BHD - Bahrain Dinar</option>
+  <option value="CAD">CAD - Canadian Dollar</option>
+  <option value="CHF">CHF - Swiss Francs</option>
+  <option value="DKK">DKK - Danish Kroner</option>
+  <option value="EUR">EUR - Euro</option>
+  <option value="GBP">GBP - Pound Sterling</option>
+  <option value="HKD">HKD - Hong Kong Dollar</option>
+  <option value="INR" selected>INR - Indian Rupees</option>
+  <option value="JPY">JPY - Japanese Yen</option>
+  <option value="KES">KES - Kenya Shilling</option>
+  <option value="KRW">KRW - Korean Won</option>
+  <option value="KWD">KWD - Kuwait Dinar</option>
+  <option value="NOK">NOK - Norwegian Kroner</option>
+  <option value="NZD">NZD - New Zealand Dollar</option>
+  <option value="QAR">QAR - Qatari Riyal</option>
+  <option value="SAR">SAR - Saudi Arabian Riyal</option>
+  <option value="SEK">SEK - Swedish Kroner</option>
+  <option value="SGD">SGD - Singapore Dollar</option>
+  <option value="TRY">TRY - Turkish Lira</option>
+  <option value="USD">USD - U.S. Dollar</option>
+  <option value="YEN">YEN - Chinese Yuan</option>
+  <option value="ZAR">ZAR - South African Rand</option>
+</select>
+</div>
+
+        <div><label for="Dlrdval">Declared Value :</label><input type="number" name="dvalue" id="dvalue" placeholder=""></div>
+        <div><label for="pkdate">Pickup Date :</label><input type="date" name="pd" id="pd" value=date() placeholder=""></div>
+        <div><label for="pktime">Pickup Time :</label><input type="text" name="ptime" id="ptime" value="1100" placeholder=""></div>
+        <div><label for="Referno">Reference Number :</label><input type="text" name="refno" , id="refno" placeholder=""></div></b>
+	<div><label for="Invoiceno">Invoice Number :</label><input type="text" name="awbno" id="awbno" placeholder=""></div>
+      </div><br><br>
+
+
+      <div class="form-row">
+<div class="input-group">
+     <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Dispatch Mode :</b></span>
+      <select name="prod" id="sel">
+        <option value="O">Intl. Others</option>
+  <option value="1">Express Easy Box 6 (JJ)</option>
+  <option value="2">Express Easy Box 8 (JB)</option>
+  <option value="4">Express Easy Box 4</option>
+  <option value="7">University Express</option>
+  <option value="C">Express Pallete</option>
+  <option value="K">INTL TDI 09:00 DOC -TDK</option>
+  <option value="Q">Temperature Controlled</option>
+  <option value="R">Global Mail</option>
+  <option value="T">INTL TDI 12:00 DOC -TDT</option>
+  <option value="Y">INTL TDI 12:00 NONDOC-TDY</option>
+
+      </select>
+</div>
+
+
+<div class="input-group">
+<div><label for="TermsofTrade">Terms of Trade :</label></div>
+<select name="incoterm" id="incoterm">
+  <option value="" >Nil</option>
+  <option value="CFR">CFR - Cost and freight</option>
+  <option value="CIF">CIF - Cost, insurance, freight</option>
+  <option value="CIP">CIP - Carriage and insurance paid to</option>
+  <option value="CPT">CPT - Carriage paid to</option>
+  <option value="DAF">DAF - Delivered at frontier</option>
+  <option value="DAP" selected >DAP - Delivered At Place</option>
+  <option value="DAT">DAT - Delivered At Terminal</option>
+  <option value="DDP">DDP - Delivered Duty Paid</option>
+  <option value="DDU">DDU - Delivered Duty unpaid</option>
+  <option value="DEQ">DEQ - Delivered ex quay</option>
+  <option value="DES">DES - Delivered ex ship</option>
+  <option value="EXW">EXW - Ex works</option>
+  <option value="FAS">FAS - Free alongside Ship</option>
+  <option value="FCA">FCA - Free Carrier</option>
+  <option value="FOB">FOB - Free on Board</option>
+</select>
+</div>
+
+
+</div><br>
+        <div class="radio-group">
+	<div><span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Product Type:</b></span></div>
+	<div>Dox<input type="radio" name="ptype" value="dox" checked></div>
+	<div>Non-Dox <input type="radio" name="ptype" value="non-dox" ></div>
+
+        <div><span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Register Pickup :</b></span></div>
+	<div>Yes<input type="radio" name="pickup" value="yes" checked></div>
+	<div>No<input type="radio" name="pickup" value="no"></div>
+
+   </div><br>
+
+
+      <span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Commodity Description:<b></span>
+      <input type="text" name="ccmdty" id="ccmdty">
+      </div>
+
+
+<!-- Item Detail Section -->
+    <div class="form-section">
+      <h2>Item Details</h2>
+      <div class="grid">
+      
+
+<div><label for="csbclr">CSB Clearence :</label>
+<select name="prod" id="csb">
+  <option value="0">CSB-IV</option>
+  <option value="1">CSB-V</option>
+</select>
+</div>
+
+        <div><label for="itemName">Item Name :</label><input type="text" name="itemName" id="itemName" placeholder="e.g T-Shirt, Phone"></div>
+        <div><label for="CommodityCode">CommodityCode :</label><input type="text" name="cmdtyCode" id="cmdtyCode" placeholder="e.g Food Stuff, Electrical Item"></div>
+        <div><label for="HS Code">HS Code :</label><input type="text" name="hsCode" id="hsCode" placeholder="Harmonized System of Nomenclature Code"></div>
+
+
+
+<div><label for="exportReason">Export Reason :</label>
+<select name="exportReason" id="exportReason">
+  <option value="">Nil</option>
+  <option value="Unsolicited Gift">Unsolicited Gift</option>
+  <option value="Personal not for resale">Personal not for resale</option>
+  <option value="Samples not for sale">Samples not for sale </option>
+  <option value="Commercial">Commercial</option>
+  <option value="Return for repair">Return for repair</option>
+  <option value="Return after repair">Return after repair</option>
+</select>
+</div>
+
+<div><label for="SupplyIGST">Supply IGST :</label>
+<select name="supplyIgst" id="supplyIgst">
+<option value="NA">NA</option>
+<option value="Yes">Yes</option>
+ <option value="No">No</option>
+</select>
+</div>
+
+<div class="igst" id="igst">
+	
+</div>
+ <div class="csbv" id="csbv">
+
+ </div>    
+ <div class="csbv" id="csbv1">
+
+ </div>          
+  
+
+</div>
+
+ <span><b style="font-family: sans-serif; font-size: 16px; color: #000000;"> Diminsions :</b></span>
+
+ <div id="res"> </div>
+
+    </div>
+
+
+ <button type="button" onclick="gen()"><b>GENERATE AWB</b></button>
+
+
+  </form>
+
+
+<!-- API Response Section -->
+<div id="loadingOverlay" style="display: none;">
+    <div class="spinner"></div>
+    <p>Generating Waybill...</p>
+</div>
+  <div id="apiResult">
+   
+  </div>
+  <embed id="pdfViewer" src="" type="application/pdf" width="100%" height="500px" style="display:none;" />
+    <div id="apiResponse">
+    <pre id="responseText"></pre>
+    <iframe id="pdfViewer" style="display:none; width:100%; height:500px; border:1px solid #ddd; margin-top:10px;"></iframe>
+    <iframe id="pdfViewer"></iframe>
+
+  </div>
+
+
+  <script src="js/IntlScript.js"></script> 
+</body>
+</html>
