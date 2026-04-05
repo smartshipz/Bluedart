@@ -34,14 +34,29 @@
           onmouseleave="closeDropdown(event)">
         <a href="#">🖨️ Mps Printing ▾</a>
         <ul class="dropdown-content">
-
-
       <li><a href="#" onclick="loadPage('MpsPrint.html')">Mps Manual</a></li>
 <li><a href="#" onclick="loadPage('MpsApi.html')">Mps API</a></li>
    </ul>
       </li>
+
       <li><a href="#" onclick="loadPage('tracking.html')">📍 Tracking</a></li>
-      <li><a href="#" onclick="loadPage('CreateShipments.html')">📦 AWB Gen</a></li>
+
+
+<li class="dropdown"
+          onmouseenter="openDropdown(event)"
+          onmouseleave="closeDropdown(event)">
+        <a href="#">📦 AWB Gen ▾</a>
+        <ul class="dropdown-content">
+
+
+      <li><a href="#" onclick="loadPage('CreateShipments.html')">Domestics</a></li>
+      <li><a href="#" onclick="loadPage('CreateIntlship.html')">International</a></li>
+      <li><a href="#" onclick="handleSelection()">Awb Cancalletion</a></li>
+
+</ul>
+      </li>
+
+
       <li><a href="#" onclick="handleSelection()">📥 Bulk Import</a></li>
       <li><a href="#" onclick="loadPage('AccountConfig.html')">⚙️ Account Config</a></li>
     </ul>
