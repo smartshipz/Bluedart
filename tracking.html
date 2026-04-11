@@ -2,34 +2,39 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blue Dart Tracking</title>
- <link href="https://fonts.googleapis.com" rel="stylesheet">
- <link rel="stylesheet" href="css/FinderCss.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0""")/>
+  <title>Blue Dart Tracking - Operational Sync</title>
+ 
+<link rel="stylesheet" href="css/Trackingcss.css">
 </head>
 <body>
 
 <div class="card">
-<header>
+  <header>
     <h2>Blue Dart Tracking</h2>
     <p class="subtitle">If It’s Important, Blue Dart It!</p>
   </header>
-<div class="form-row">
-   <div class="input-group full-width">
-    <label for="awbNum">Enter the AWB Number</label>
-    <input type="text" id="awbNum" placeholder="Enter the AWB Number" /></div>
-   </div>
 
-    <button onclick="track()">Search</button>
-<div id="tableContainer"> </div>
+  <div class="mode-toggle">
+    <input type="checkbox" id="bulkMode" onchange="handleModeChange()">
+    <label for="bulkMode" style="text-transform: none; color: var(--primary); cursor: pointer;">
+      <strong>Bulk Mode</strong> (Paste multiple Airway Bill numbers - Max query limit is 50)
+    </label>
+  </div>
+
+  <div class="input-group" id="inputWrapper">
+    <label for="awbInput">Enter AWB Number</label>
+    <input type="text" id="awbInput" placeholder="Ex: 123456789">
+  </div>
+
+  <button onclick="track()">Search Shipment</button>
+
+  <div id="tableContainer"></div>
 </div>
-
-
-  
 
   <script src="js/TrackingScript.js">
 
-  </script>
+</script>
 
 </body>
 </html>
