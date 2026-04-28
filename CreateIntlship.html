@@ -193,6 +193,11 @@
 </div>
         <div><label for="pincode">Consignee Pincode :</lable><input type="text" name="pin" id="cpin" placeholder=""></div>
         <div><label for="mobile">Consignee Mobile No :</lable><input type="tel" name="tel" id="ctel" placeholder=""></div>
+
+<div class="stCode" id="stCode">
+	
+</div>
+
       </div>
     </div>
 
@@ -238,12 +243,9 @@
         <div><label for="pktime">Pickup Time :</label><input type="text" name="ptime" id="ptime" value="1100" placeholder=""></div>
         <div><label for="Referno">Reference Number :</label><input type="text" name="refno" , id="refno" placeholder=""></div></b>
 	<div><label for="Invoiceno">Invoice Number :</label><input type="text" name="awbno" id="awbno" placeholder=""></div>
-      </div><br><br>
-
-
-      <div class="form-row">
-<div class="input-group">
-     <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Dispatch Mode :</b></span>
+  
+     
+    <div><label for="productType">Package :</label>
       <select name="prod" id="sel">
         <option value="O">Intl. Others</option>
   <option value="1">Express Easy Box 6 (JJ)</option>
@@ -257,12 +259,21 @@
   <option value="T">INTL TDI 12:00 DOC -TDT</option>
   <option value="Y">INTL TDI 12:00 NONDOC-TDY</option>
 
-      </select>
-</div>
+      </select></div>
 
+<div><label for="productType">Product Type :</label>
+<select name="prod" id="prodType">
+  <option value="0">Document</option>
+  <option value="1">Non Document</option>
+</select></div>
 
-<div class="input-group">
-<div><label for="TermsofTrade">Terms of Trade :</label></div>
+<div><label for="pickupChoice">Register Pickup :</label>
+<select name="prod" id="pickupChoice">
+  <option value="true">Yes</option>
+  <option value="false">No</option>
+</select></div>
+
+<div><label for="TermsofTrade">Terms Of Trade :</label>
 <select name="incoterm" id="incoterm">
   <option value="" >Nil</option>
   <option value="CFR">CFR - Cost and freight</option>
@@ -280,26 +291,21 @@
   <option value="FAS">FAS - Free alongside Ship</option>
   <option value="FCA">FCA - Free Carrier</option>
   <option value="FOB">FOB - Free on Board</option>
-</select>
+</select></div>
+
+
+<div><br>
+  <span style="font-family: sans-serif; font-size: 16px; color: #000000;">
+    <b>Commodity Description:</b>
+  </span>
+  <br> <!-- This forces the input to start on the next line -->
+  <input type="text" name="ccmdty" id="ccmdty" style="width: 100%; max-width: 500px;">
 </div>
 
+      
+</div>
 
-</div><br>
-        <div class="radio-group">
-	<div><span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Product Type:</b></span></div>
-	<div>Dox<input type="radio" name="ptype" value="dox" checked></div>
-	<div>Non-Dox <input type="radio" name="ptype" value="non-dox" ></div>
-
-        <div><span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Register Pickup :</b></span></div>
-	<div>Yes<input type="radio" name="pickup" value="yes" checked></div>
-	<div>No<input type="radio" name="pickup" value="no"></div>
-
-   </div><br>
-
-
-      <span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Commodity Description:<b></span>
-      <input type="text" name="ccmdty" id="ccmdty">
-      </div>
+</div>
 
 
 <!-- Item Detail Section -->
@@ -314,6 +320,14 @@
   <option value="1">CSB-V</option>
 </select>
 </div>
+
+<div><label for="cargo">Is CargoShipment :</label>
+<select name="cargo" id="cargo">
+  <option value="true">Yes</option>
+  <option value="false" selected>No</option>
+</select>
+</div>
+
 
         <div><label for="itemName">Item Name :</label><input type="text" name="itemName" id="itemName" placeholder="e.g T-Shirt, Phone"></div>
         <div><label for="CommodityCode">CommodityCode :</label><input type="text" name="cmdtyCode" id="cmdtyCode" placeholder="e.g Food Stuff, Electrical Item"></div>
