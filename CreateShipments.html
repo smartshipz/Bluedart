@@ -14,15 +14,26 @@
     <!-- Shipper Section -->
 
     <div class="form-section">
-      <h2>Billing Account</h2>
+  <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+    <h2 style="margin: 0;">Billing Account</h2>
+    
+    <!-- Added background color, padding, and rounded corners to the wrapper -->
+    <div style="display: inline-flex; align-items: center; gap: 55px; background-color: #f2f4f7; padding: 6px 12px; border-radius: 6px; border: 1px solid #e2e8f0;">
+      <p class="subtitle" style="margin: 0; font-weight: bold; white-space: nowrap; color: #334155;">Airway Bill Type :</p>
+      <select name="awbType" id="awbType" onchange="changeDropdownColor(this)" style="padding: 4px 8px; border-radius: 4px; border: 1px solid #cbd5e1; background-color: #ffffff;">
+        <option value=false>Addition</option>
+        <option value=true>Modification</option>
+      </select>
+    </div>
+  </div>
       <div class="grid">
         <div><span><b>Area :</b></span><input type="text" name="area" id="area" placeholder="Area"></div>
         <div><span><b>Shipper Code :</b></span><input type="text" name="code" id="code" placeholder="Customer Code"></div>
 
 
-<div class="billing-options">
-  <!-- CheckTopay Group -->
-  <div class="option-group">
+	<div class="billing-options">
+	  <!-- CheckTopay Group -->
+	  <div class="option-group">
         <input type="checkbox" id="cbox" onclick="displayConfig()" >
 	<label for="checktopay">Is Topay Mode :</label>
   </div>
@@ -40,13 +51,13 @@
 	
        <div class="form-section">
 <h2>Shipper Address</h2>
-         <div class="grid">
+        <div class="grid">
         <div><p class="subtitle">Address Code :</p><input type="text" id="search" placeholder="" onblur="AddressData()"></div>
         <div><p class="subtitle">Shipper Name :</p><input type="text" name="sname" id="sname" placeholder=""></div>
         <div><p class="subtitle">Sender Name :</p><input type="text" name="sattn" id="sattn" placeholder=""></div>
-        <div><p class="subtitle">Shipper Address Line 1 :</p><input type="text" name="sadd1" id="sadd1" placeholder=""></div>
-        <div><p class="subtitle">Shipper Address Line 2 :</p><input type="text" name="sadd2" id="sadd2" placeholder=""></div>
-        <div><p class="subtitle">Shipper Address Line 3 :</p><input type="text" name="sadd3" id="sadd3" placeholder=""></div>
+        <div><p class="subtitle">Shipper Address 1 :</p><input type="text" name="sadd1" id="sadd1" placeholder=""></div>
+        <div><p class="subtitle">Shipper Address 2 :</p><input type="text" name="sadd2" id="sadd2" placeholder=""></div>
+        <div><p class="subtitle">Shipper Address 3 :</p><input type="text" name="sadd3" id="sadd3" placeholder=""></div>
         <div><p class="subtitle">Shipper Pincode :</p><input type="number" name="spin" id="spin" placeholder=""></div>
         <div><p class="subtitle">Shipper Mobile :</p><input type="tel" name="stel" id="stel" placeholder=""></div>
       </div>
@@ -61,9 +72,9 @@
         <div><p class="subtitle">Consignee Code :</p><input type="text" id="searchCode" placeholder="" onblur="fetchData()"></div>
         <div><p class="subtitle">Consignee Company Name :</p><input type="text" name="cname" id="cname" placeholder=""></div>
         <div><p class="subtitle">Consignee Attention :</p><input type="text" name="cattn" id="cattn" placeholder=""></div>
-        <div><p class="subtitle">Consignee Address Line 1 :</p><input type="text" name="add1" id="cadd1" placeholder=""></div>
-        <div><p class="subtitle">Consignee Address Line 2 :</p><input type="text" name="add2" id="cadd2" placeholder=""></div>
-        <div><p class="subtitle">Consignee Address Line 3 :</p><input type="text" name="add3" id="cadd3" placeholder=""></div>
+        <div><p class="subtitle">Consignee Address 1 :</p><input type="text" name="add1" id="cadd1" placeholder=""></div>
+        <div><p class="subtitle">Consignee Address 2 :</p><input type="text" name="add2" id="cadd2" placeholder=""></div>
+        <div><p class="subtitle">Consignee Address 3 :</p><input type="text" name="add3" id="cadd3" placeholder=""></div>
         <div><p class="subtitle">Consignee Pincode :</p><input type="number" name="pin" id="cpin" placeholder=""></div>
         <div><p class="subtitle">Consignee Mobile No :</p><input type="tel" name="tel" id="ctel" placeholder=""></div>
       </div>
@@ -81,13 +92,14 @@
         <div><p class="subtitle">Pickup Date :</p><input type="date" name="pd" id="pd" value=date() placeholder=""></div>
         <div><p class="subtitle">Pickup Time :</p><input type="text" name="ptime" id="ptime" placeholder=""></div>
         <div><p class="subtitle">Reference Number :</p><input type="text" name="refno" , id="refno" placeholder=""></div></b>
+      	<div><p class="subtitle">Commodity  :</p><input type="text" name="ccmdty" id="ccmdty"></div></b>
+
 	<div><p class="subtitle">AWB Number :</p><input type="text" name="awbno" id="awbno" placeholder=""></div>
-      </div><br><br>
+      </div><br>
 
-
-      <div class="form-row">
-<div class="input-group">
-     <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Dispatch Mode :</b></span>
+      <div class="grid">
+<div>
+     <p class="subtitle">Dispatch Mode :</p>
       <select name="prod" id="sel">
 	<option value='SelectMode'>----Choose Mode----</option>
         <option value='AirEtailPrepaid'>AirEtailPrepaid</option>
@@ -101,47 +113,51 @@
         <option value='Surface'>Surface</option>
       </select>
 </div>
-<div class="input-group">
-      <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Value Added Service : </b></span>
+<div class="1input-group">
+<p class="subtitle">Value Added Service :</p>
       <select name="vas" id="vas">
 	
       </select>
 </div>
+<div class="1input-group">
+<p class="subtitle">Product Type :</p>
+      <select name="prodTyp" id="prodTyp">
+        <option value=1>Non Document</option>
+        <option value=0>Document</option>
+      </select>
+</div>
 
-<div class="input-group">
+<div class="1input-group">
+<p class="subtitle">Register Pickup :</p>
 
-<span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Label Size :</b></span>
+      <select name="regPickup" id="regPickup">
+        <option value=true>Yes</option>
+        <option value=false>No</option>
+      </select>
+</div>
+
+
+
+<div class="1input-group">
+<p class="subtitle">Label Size :</p>
+
       <select name="pdf" id="pdf">
         <option value='a4s'>A4 - Single Copy</option>
-        <option value='a43'>A4 - Three Copy</option>
+        <option value='a43' selected>A4 - Three Copy</option>
         <option value='lab89'>89 x 60 Label</option>
         <option value='lab55'>55 x 30 Label</option>
 	<option value='nopdf'>PDF Not Required</option>
       </select>
 </div>
-</div><br>
 
-        <div class="radio-group">
-	<div><span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Product Type:</b></span></div>
-	<div>Dox<input type="radio" name="ptype" value="dox"></div>
-	<div>Non-Dox <input type="radio" name="ptype" value="non-dox" checked></div>
-
-        <div><span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Register Pickup :</b></span></div>
-	<div>Yes<input type="radio" name="pickup" value="yes" checked></div>
-	<div>No<input type="radio" name="pickup" value="no"></div>
-
-   </div><br>
-
-
-      <span><b style="font-family: sans-serif; font-size: 16px; color: #000000;">Commodity :<b></span>
-      <input type="text" name="ccmdty" id="ccmdty">
+    
       </div>
-      <span><b style="font-family: sans-serif; font-size: 16px; color: #000000;"> Diminsions :</b></span>
-      <div id="res"> </div>
+      
 
     </div>
-
-    <button type="button" onclick="gen()"><b>CLICK TO GENERATE</b></button>
+<span><b style="font-family: sans-serif; font-size: 16px; color: #000000;"> Diminsions :</b></span>
+      <div id="res"> </div>
+    <button type="button" onclick="gen()"><b>GENERATE AWB</b></button>
   </form>
 
 
