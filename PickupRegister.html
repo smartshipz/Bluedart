@@ -1,0 +1,131 @@
+<!DOCTYPE html> 
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shipment Booking Form</title>
+<link href="https://fonts.googleapis.com" rel="stylesheet">
+<link rel="stylesheet" href="css/CreateShipment.css">
+
+</head>
+<body>
+
+  <form>
+    <!-- Shipper Section -->
+
+
+
+    <div class="form-section">
+      <h2>Pickup Registration Code</h2>
+      <div class="grid">
+        <div><span><b>Area :</b></span><input type="text" name="area" id="area" placeholder="Area"></div>
+        <div><span><b>Shipper Code :</b></span><input type="text" name="code" id="code" placeholder="Customer Code"></div>
+
+
+<div class="billing-options">
+  <!-- CheckTopay Group -->
+  <div class="option-group">
+        <input type="checkbox" id="cbox" onclick="displayConfig()" >
+	<label for="checktopay">Is Topay Mode :</label>
+  </div>
+
+<div class="option-group">
+    
+    <input type="checkbox" id="Reverse" onclick="displayConfig()">
+    <label for="reversepk">Is Reverse Pickup :</label>
+  </div>
+</div>
+
+
+       </div></div>
+
+	
+       <div class="form-section">
+<h2>Pickup Address</h2>
+        <div class="grid">
+        <div><p class="subtitle">Address Code :</p><input type="text" id="search" placeholder="" onblur="AddressData()"></div>
+        <div><p class="subtitle">Shipper Name :</p><input type="text" name="sname" id="sname" placeholder=""></div>
+        <div><p class="subtitle">Contact Person :</p><input type="text" name="sattn" id="sattn" placeholder=""></div>
+        <div><p class="subtitle">Pickup Address 1 :</p><input type="text" name="sadd1" id="sadd1" placeholder=""></div>
+        <div><p class="subtitle">Pickup Address 2 :</p><input type="text" name="sadd2" id="sadd2" placeholder=""></div>
+        <div><p class="subtitle">Pickup Address 3 :</p><input type="text" name="sadd3" id="sadd3" placeholder=""></div>
+        <div><p class="subtitle">Shipper Pincode :</p><input type="number" name="spin" id="spin" placeholder=""></div>
+        <div><p class="subtitle">Shipper Mobile :</p><input type="tel" name="stel" id="stel" placeholder=""></div>
+      </div>
+    </div>
+  
+
+    <!-- Service Section -->
+    <div class="form-section">
+      <h2>Service Details</h2>
+      <div class="grid">
+        <div><p class="subtitle">Pieces :</p><input type="number" id="pcs"  placeholder=""></div>
+        <div><p class="subtitle">Act Weight :</p><input type="number" name="wgt" id="wgt" placeholder=""></div>
+         <div><p class="subtitle">Dim Weight :</p><input type="number" name="dwgt" id="dwgt" placeholder=""></div>
+        <div><p class="subtitle">Pickup Date :</p><input type="date" name="pd" id="pd" value=date() placeholder=""></div>
+        <div><p class="subtitle">Pickup Ready Time :</p><input type="text" name="ptime" id="ptime" placeholder=""></div>
+ 	<div><p class="subtitle">Office Close Time :</p><input type="text" name="ptime" id="ptime" placeholder=""></div>
+
+        <div><p class="subtitle">Reference Number :</p><input type="text" name="refno" , id="refno" placeholder=""></div></b>
+	<div><p class="subtitle">AWB Number :</p><input type="text" name="awbno" id="awbno" placeholder=""></div>
+      </div><br><br>
+
+
+      <div class="form-row">
+<div class="input-group">
+     <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Dispatch Mode :</b></span>
+      <select name="prod" id="sel">
+	<option value='SelectMode'>----Choose Mode----</option>
+        <option value='A'>Apex</option>
+        <option value='E'>Surface</option>
+        <option value='D'>DomesticPriority</option>
+        <option value='I'>Internationak</option>
+      </select>
+</div>
+<div class="input-group">
+      <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Sub Product : </b></span>
+      <select name="vas" id="vas">
+	
+      </select>
+</div>
+
+<div class="input-group">
+     <span><b style="font-family: sans-serif; font-size: 16px; color: #166534;">Product Type :</b></span>
+      <select name="prod" id="prtype">
+        <option value='1'>Non-Dox</option>
+	<option value='0'>Dox</option>
+      </select>
+</div>
+
+
+</div><br>
+        
+      </div>
+    
+
+    </div>
+
+    <button type="button" onclick="gen()"><b>REGISTER PICKUP</b></button>
+  </form>
+
+
+<!-- API Response Section -->
+<div id="loadingOverlay" style="display: none;">
+    <div class="spinner"></div>
+    <p>Generating Waybill...</p>
+</div>
+  <div id="apiResult">
+   
+  </div>
+  <embed id="pdfViewer" src="" type="application/pdf" width="100%" height="500px" style="display:none;" />
+    <div id="apiResponse">
+    <pre id="responseText"></pre>
+    <iframe id="pdfViewer" style="display:none; width:100%; height:500px; border:1px solid #ddd; margin-top:10px;"></iframe>
+    <iframe id="pdfViewer"></iframe>
+
+  </div>
+
+
+  <script src="js/PickupScript.js"></script> 
+</body>
+</html>
