@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enterprise Volumetric Weight Calculator</title>
+<link rel="stylesheet" href="css/volWgt.css">
+  
+</head>
+<body>
+
+<div class="app-container">
+    <header>
+        <h1>Volumetric Weight Calculator</h1>
+        <div class="subtitle">Calculate dimensional weight instantly for accurate shipping costs.</div>
+    </header>
+
+    <div class="workspace">
+        <!-- Left Pane: Inputs & Ledger Entry Sheets -->
+        <div class="card">
+            <div class="setup-grid">
+                <div class="form-group">
+                    <label for="pieceCount">Number of Pieces:</label>
+                    <input type="number" id="pieceCount" min="1" placeholder="e.g., 3 separate configurations..." oninput="generateRows()">
+                </div>
+                <div class="form-group">
+                    <label for="divisor">Dispatch Mode :</label>
+                    <select id="divisor" onchange="calculateVolumetricWeight()">
+                        <option value="5000">Air cargo Standard</option>
+                        <option value="2700">Surface  Cargo</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Table Enclosure -->
+            <div id="tableContainer" class="table-wrapper" style="display:none;">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Line Item</th>
+                            <th style="text-align: right;">Length</th>
+                            <th style="text-align: right;">Width</th>
+                            <th style="text-align: right;">Height</th>
+                            <th style="text-align: right;">Count</th>
+                            <th style="text-align: right;">Vol. Weight</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Dynamic elements injected here -->
+                    </tbody>
+                </table>
+            </div>
+            
+            <div id="formPlaceholder" class="placeholder-text">
+                Enter the number of distinct cargo items above to initialize the data entry grid.
+            </div>
+        </div>
+
+        <!-- Right Pane: Sticky Calculations Metrics Summary Sidebar -->
+        <div class="sticky-sidebar">
+            <div class="card summary-card" id="resultsBox" style="opacity: 0.3; transform: scale(0.99);">
+                <div class="summary-title">Dim Weight Summary</div>
+                
+                <div class="summary-row">
+                    <span>Mode of Dispath:</span>
+                    <span class="summary-val" id="summaryTypes">0</span>
+                </div>
+                
+                <div class="summary-row">
+                    <span style="color: #cbd5e1;">Total Pieces:</span>
+                    <span class="summary-val" id="totalPieces">0</span>
+                </div>
+
+                <div class="grand-total-box">
+                    <div class="grand-label">Chargeable Vol. Weight</div>
+                    <div class="grand-weight"><span id="totalWeight">0.00</span><span>kg</span></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+  <script src="js/volWgt.js"></script> 
+</body>
+</html>
